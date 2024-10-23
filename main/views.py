@@ -20,11 +20,11 @@ def delete_task(request, task_id):
     return redirect('task_list')
 
 def edit_task(request, task_id):
-    task = get_object_or_404(task,id=task_id)
+    task = get_object_or_404(Task, id=task_id)
     
     if request.method == 'POST':
         task.title = request.POST.get('title')
-        task.complete = 'complete' in  request.POST #atualiza o ststus com base no checkbox
+        task.complete = 'complete' in  request.POST #atualiza o status com base no checkbox
         task.save()
         return redirect('task_list')
         
