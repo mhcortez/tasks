@@ -1,0 +1,13 @@
+<h1>Editar tarefa</h1>
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="title" value="{{ task.title }}" placeholder="Título da tarefa">
+    <br>
+    <label>
+        <input type="checkbox" name="completed" {% if task.completed %}checked{% endif %}> Concluida 
+    </label>
+    <br>
+    <button type="submit">Atualizar</button>
+</form>
+
+<a href="{% url 'task_list' %}">Voltar para a lista de tarefas</a>
