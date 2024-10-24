@@ -1,10 +1,19 @@
-<h1> Lista de Tarefas</h1>
-<ul>
-    {% for task in tasks %}
-        <li>{{ task.title }}  - {% if task.completed %} conluída {% else %} pendente {% endif %}</li>
-        <a href="{% url 'edit_task' task.id %}">Editar</a>  <!-- Link para edição -->
-        <a href="{% url 'delete_task' task.id %}">Excluir</a>      
-    {% endfor %}
-</ul>
+{% extends "base.html" %}
 
-<a href="{% url 'add_task' %}">Criar uma nova tarefa</a>
+{% block title %} 
+    <h1 class="display-1"><u> Lista de Tarefas </u> </h1>
+{% endblock %}
+
+{% block content %}
+
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task.title }}  - {% if task.complete %} conluída {% else %} pendente {% endif %}</li>            
+            <a href="{% url 'edit_task' task.id %}" class="link-primary">Editar </a>  <!-- Link para edição -->
+            <a href="{% url 'delete_task' task.id %}" class="text-danger">Excluir</a>      
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'add_task' %}" class="text-light bg-dark">Criar uma nova tarefa</a>  
+
+{% endblock %}
