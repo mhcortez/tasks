@@ -9,7 +9,8 @@ def task_list(request):
 def add_task(request):
     if request.method == 'POST':
         title = request.POST.get('title')
-        complete = request.POST.get('complete')
+        complete = request.POST.get('complete') == 'true'
+        (complete)
         if title:            
             Task.objects.create(title=title, complete=complete)
         return redirect('task_list')
