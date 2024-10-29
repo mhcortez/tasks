@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %} 
+    <h1 class="display-1"> Lista de Cadastro </h1>
+    <br>
+    <br>
+{% endblock %}
+
+{% block content %}
+
+    <table class="table table-hover table-bordered table-sm caption-top">        
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>               
+            <th scope="col">Telefone</th>            
+          </tr>
+        </thead>
+        <tbody>
+           {% for i in cadastros %}  
+                <tr>
+                    <th> {{ i.nome }} </th>
+                    <th> {{ i.email }} </th>
+                    <th> {{ i.telefone }} </th>
+                                        
+                </tr> 
+            {% endfor %}          
+        </tbody>
+    <a href="{% url 'cria_cadastro' %}" class="text-light bg-dark">Criar novo cadastro</a>  
+
+{% endblock %}

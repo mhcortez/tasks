@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+{% block title %} 
+<h1> Adicionar Cadastro</h1>
+    <br>
+    <br>
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        
+        <div class="form-group col-md-4">
+            <label>Nome</label>
+            <input type="text" name="nome" placeholder="Digite o nome">
+        </div>    
+        
+        <div class="form-group col-md-4">
+            <label>Email</label>
+            <input type="text" name="email" placeholder="Digite o e-mail">
+        </div>
+        
+        <div class="form-group col-md-4">
+            <label>Telefone</label>
+            <input type="text" name="telefone" class="form-control" onkeypress="$(this).mask('(00) 00000-0009')">
+        </div>
+        
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <a href="{% url 'lista_cadastro' %}">Voltar para a lista de tarefas</a>
+{% endblock %}

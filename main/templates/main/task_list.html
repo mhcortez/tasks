@@ -7,20 +7,7 @@
 {% endblock %}
 
 {% block content %}
-    <!--
-    <ul class="list-group">
-        {% for task in tasks %}
-            <li class="list-group-item">{{ task.title }}  - {% if task.complete %} conluída {% else %} pendente {% endif %}</li>            
-            <a href="{% url 'edit_task' task.id %}" class="link-primary">Editar </a>  
-            <a href="{% url 'delete_task' task.id %}" class="text-danger">Excluir</a>      
-            
-        {% endfor %}
-    </ul>   
-    
-    <br>
-    <br>
-    <br>
-    -->
+
     <table class="table table-hover table-bordered table-sm caption-top">
         <!--<caption>Lista de Tarefas</caption> -->
         <thead class="thead-light">

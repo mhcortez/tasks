@@ -5,5 +5,14 @@ class Task(models.Model):
     complete = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     
-def __str__(self):
-    return self.title
+    def __str__(self):
+        return self.title
+
+
+class Cadastro(models.Model):
+    nome = models.CharField(max_length=100)
+    email = models.CharField(max_length=50)
+    telefone = models.CharField(max_length=11) 
+    
+    def __str__(self):
+        return self.nome
